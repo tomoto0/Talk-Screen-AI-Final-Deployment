@@ -1,4 +1,4 @@
-# Talk-Screen-AI (Final Deployment)
+# Talk-Screen-AI
 
 ## AI Assistant with Context-Aware Chat and Screen Sharing
 
