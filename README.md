@@ -39,15 +39,14 @@ The application follows a standard client-server architecture:
 
 #### Architecture Diagram (Conceptual)
 
-```mermaid
-graph TD
-    A[User Browser] -->|HTTP/S| B(Frontend: React/JS);
-    B -->|Screen Share (getDisplayMedia)| C[User Screen];
-    B -->|API Calls (Chat/Translate)| D(Backend: Flask);
-    D -->|OpenAI-Compatible API Request| E[Manus LLM API];
-    E -->|Response| D;
-    D -->|JSON Response| B;
-    B -->|TTS (Web Speech API)| A;
+```
+[User Browser] --(HTTP/S)--> [Frontend: React/JS]
+[Frontend: React/JS] --(Screen Share)--> [User Screen]
+[Frontend: React/JS] --(API Calls)--> [Backend: Flask]
+[Backend: Flask] --(OpenAI-Compatible API Request)--> [Manus LLM API]
+[Manus LLM API] --(Response)--> [Backend: Flask]
+[Backend: Flask] --(JSON Response)--> [Frontend: React/JS]
+[Frontend: React/JS] --(TTS)--> [User Browser]
 ```
 
 ### Deployment Guide
